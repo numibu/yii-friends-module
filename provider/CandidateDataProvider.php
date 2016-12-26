@@ -18,7 +18,7 @@ class CandidateDataProvider extends \yii\data\ArrayDataProvider{
     {
         $this->allModels = [];
         
-        if ( $this->user === null || !$this->user instanceof UserC){
+        if ( $this->user === null || !$this->user instanceof UserC) {
             $this->user = UserC::findIdentity( Yii::$app->user->id );
         }
         

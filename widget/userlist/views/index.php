@@ -37,14 +37,14 @@ use yii\helpers\Url as Url;
                     } 
                     return '';
                 },
-                'add-friend' => function($url, $model)  use ($friendsArray, $candidate){
-                    if (Yii::$app->user->id === $model->id) {
+                'add-friend' => function( $url, $model ) use ( $friendsArray, $candidate ) {
+                    if ( Yii::$app->user->id === $model->id ) {
                         return '';
                     }
-                    if (array_key_exists( $model->id, $friendsArray ) ){
+                    if ( array_key_exists( $model->id, $friendsArray ) ) {
                         return '';
                     }
-                    if (array_key_exists( $model->id, $candidate ) ){
+                    if ( array_key_exists( $model->id, $candidate ) ) {
                         return '';
                     }
                     return Html::a(
