@@ -6,6 +6,8 @@
 
 use yii\helpers\Html as Html;
 use yii\helpers\Url as Url;
+use app\modules\friends\models\Friends as friends;
+
 ?>
 <div>
     <?= yii\grid\GridView::widget([
@@ -38,15 +40,26 @@ use yii\helpers\Url as Url;
                     return '';
                 },
                 'add-friend' => function( $url, $model ) use ( $friendsArray, $candidate ) {
+                   
+                    $friends = Friends::findOne( ['initiated_id' => $model->id, 'initiator_id' => Yii::$app->user->id] );
+                    
                     if ( Yii::$app->user->id === $model->id ) {
                         return '';
                     }
+                    
                     if ( array_key_exists( $model->id, $friendsArray ) ) {
                         return '';
                     }
+                    
                     if ( array_key_exists( $model->id, $candidate ) ) {
                         return '';
                     }
+                    
+                    if ( $friends instanceof Friends ) {
+                        //echo ($friends->initiated === $model->id);
+                        return '';
+                    }
+                    
                     return Html::a(
                         '<span class="glyphicon glyphicon-plus"></span>',
                     $url);
