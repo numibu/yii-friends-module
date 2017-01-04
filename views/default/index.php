@@ -3,7 +3,6 @@
  * 
  */
 
-use app\modules\friends\widget\userlist\UserList as UserList;
 use app\modules\friends\widget\friendsList\FriendsList as FriendsList;
 
 ?>
@@ -18,12 +17,5 @@ use app\modules\friends\widget\friendsList\FriendsList as FriendsList;
         You may customize this page by editing the following file:<br>
         <code><?= __FILE__ ?></code>
     </p>
-</div>   
-
-   <!-- <div class="jumbotron">
-    <?php // UserList::widget(); ?>
-    </div>-->
-    
+</div>     
     <?= FriendsList::widget(); ?>
-    
-<!-- </div> -->

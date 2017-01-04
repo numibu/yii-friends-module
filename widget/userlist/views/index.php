@@ -6,7 +6,6 @@
 
 use yii\helpers\Html as Html;
 use yii\helpers\Url as Url;
-use app\modules\friends\models\Friends as friends;
 
 ?>
 <div>
@@ -23,47 +22,21 @@ use app\modules\friends\models\Friends as friends;
             'header' => 'Actions',
             'template' => $widgetInstance->getButtonTemplate(),
             'buttons' => [
-                'delete-friend' => function($url, $model) use ($friendsArray){
-                    if (array_key_exists( $model->id, $friendsArray )){
-                        return Html::a(
-                            '<span class="glyphicon glyphicon-minus"></span>', 
-                        $url);
-                    }
-                    return '';
-                },
-                'view' => function($url,$model){
-                    if (Yii::$app->user->id === $model->id) {
+                'delete-friend' => $widgetInstance->deleteFriendButton(),
+                        
+                'view' => function( $url, $model ){
+                    if ( Yii::$app->user->id === $model->id ) {
                         return Html::a(
                             '<span class="glyphicon glyphicon-eye-open"></span>', 
-                        Url::toRoute( 'view/' . $model->id) );
+                            Url::toRoute( 'view/' . $model->id )
+                            );
                     } 
                     return '';
                 },
-                'add-friend' => function( $url, $model ) use ( $friendsArray, $candidate ) {
-                   
-                    $friends = Friends::findOne( ['initiated_id' => $model->id, 'initiator_id' => Yii::$app->user->id] );
-                    
-                    if ( Yii::$app->user->id === $model->id ) {
-                        return '';
-                    }
-                    
-                    if ( array_key_exists( $model->id, $friendsArray ) ) {
-                        return '';
-                    }
-                    
-                    if ( array_key_exists( $model->id, $candidate ) ) {
-                        return '';
-                    }
-                    
-                    if ( $friends instanceof Friends ) {
-                        //echo ($friends->initiated === $model->id);
-                        return '';
-                    }
-                    
-                    return Html::a(
-                        '<span class="glyphicon glyphicon-plus"></span>',
-                    $url);
-                },
+                        
+                'add-friend' => $widgetInstance->addFriendButton(),
+                        
+                        
                 'login' => function($url,$model){
                      return Html::a(
 '<span class="glyphicon glyphicon-user"></span><span>login</span>', $url);
