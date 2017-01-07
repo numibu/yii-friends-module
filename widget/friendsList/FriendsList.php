@@ -2,7 +2,8 @@
 
 use yii\base\Widget as Widget;
 use app\modules\friends\models\UserC as UserC;
-use app\modules\friends\provider\CandidateDataProvider as Candidate;
+use app\modules\friends\provider\CandidateDataProvider;
+use app\modules\friends\provider\FriendsDataProvider;
 use app\modules\friends\provider\WidgetAssets as WidgetAssets;
 
 Class FriendsList extends Widget
@@ -54,8 +55,12 @@ Class FriendsList extends Widget
             new \yii\base\UnknownPropertyException();
         }      
         
-        if ( $this->candidates === null || !$this->candidates instanceof Candidate){
-            $this->candidates = new Candidate();
+        if ( $this->candidates === null || !$this->candidates instanceof CandidateDataProvider) {
+            $this->candidates = new CandidateDataProvider();
+        }
+        
+        if ( $this->friends === null || !$this->friends instanceof FriendsDataProvider) {
+            $this->friends = new FriendsDataProvider();
         }
         
         $assets = new WidgetAssets();

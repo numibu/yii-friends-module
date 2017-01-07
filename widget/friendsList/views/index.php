@@ -25,7 +25,7 @@ use app\modules\friends\widget\userlist\UserList;
         <section id="content1">
 
 <?= yii\grid\GridView::widget([
-    'dataProvider' => $widgetInstance->user->friends,
+    'dataProvider' => $widgetInstance->friends,
     'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -80,10 +80,10 @@ use app\modules\friends\widget\userlist\UserList;
         </section> 
         
         <section id="content3">
-    <?= UserList::widget([
+    <?php /* UserList::widget([
                 'friendsList' => $widgetInstance->user->friends,
                 'candidate' => $widgetInstance->user->candidate
-            ]); ?>
+            ]); */?>
         </section>
     </div>
 </div>
