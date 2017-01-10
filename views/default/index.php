@@ -4,7 +4,10 @@
  */
 
 use app\modules\friends\widget\friendsList\FriendsList as FriendsList;
-
+/*
+$users = \app\modules\friends\models\UserC::find()->with('friendsx')->all();
+$asd = $users[2]->friendsx;
+$x=123;*/
 ?>
 <div class="friends-default-index hidden">
     <h1><?= $this->context->action->uniqueId ?></h1>

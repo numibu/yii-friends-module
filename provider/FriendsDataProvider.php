@@ -6,18 +6,18 @@ use app\modules\friends\models\UserC as UserC;
 class FriendsDataProvider extends \yii\data\ArrayDataProvider{
     
     /**
-     *
      * @var UserC 
      */
     public $user;
     
     /**
-     * 
+     * Constructor
      * @param array $config
      * @param integer $userId
      */
-    public function __construct($config = array(), $userId = null ) {
-        $this->user = $userId!==null ? 
+    public function __construct($config = array(), $userId = null ) 
+    {
+        $this->user = ($userId !== null) ? 
                 UserC::findIdentity( $userId ):
                 UserC::findIdentity( Yii::$app->user->id );
         
@@ -25,26 +25,21 @@ class FriendsDataProvider extends \yii\data\ArrayDataProvider{
     }
     
     /**
-     * 
+     * Initialisation an array of friends
      */
     public function init()
     {
         $this->allModels = [];
-        
-        foreach ( $this->user->friends as $friend ) {
-            if ( (int)$friend['initiator_id'] === $this->id ) {
-                
-                $initiator = UserC::findIdentity( $friend['initiated_id'] );
-                
-                $friend = [
-                            'id' => $initiator->id,
-                            'Name' => $initiator->username,
-                            'Email' =>  $initiator->email
+        $x = $this->user->friends->queryAll();
+        foreach ( $x as $friend ) {
+            if ( (int)$friend['initiator_id'] === $this->user->id ) {
+                $initiated = UserC::findIdentity( $friend['initiated_id'] );
+                $this->allModels[$initiated->id] = [
+                            'id' => $initiated->id,
+                            'Name' => $initiated->username,
+                            'Email' =>  $initiated->email
                         ];
-                
-                $this->allModels[$initiator->id] = $friend;
             }
         }
-       // var_dump($this->allModels);exit();
     }
 }

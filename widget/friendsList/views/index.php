@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * This view of FriendsList. app\modules\friends\widget\friendsList\view\index.php
+ */
+
 /* @var $this yii\web\View */
 
-/* @var $widgetInstance app\modules\friends\widget\friendsList\FriendList */
+/* @var $widgetInstance app\modules\friends\widget\friendsList\FriendsList */
 
 use yii\helpers\Html;
 use app\modules\friends\widget\userlist\UserList;
@@ -80,10 +84,10 @@ use app\modules\friends\widget\userlist\UserList;
         </section> 
         
         <section id="content3">
-    <?php /* UserList::widget([
-                'friendsList' => $widgetInstance->user->friends,
-                'candidate' => $widgetInstance->user->candidate
-            ]); */?>
+    <?php  echo UserList::widget([
+                'friendsList' => $widgetInstance->friends,
+                'candidate' => $widgetInstance->candidates
+            ]); ?>
         </section>
     </div>
 </div>

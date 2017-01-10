@@ -53,7 +53,7 @@ class UserList extends Widget
     }
     
     /**
-     * 
+     * render user list
      */
     public function run() {
         $config = ['query' => UserC::find()];
@@ -77,6 +77,10 @@ class UserList extends Widget
         }
     }
     
+    /**
+     * this method returning a template for 'add-friend' button
+     * @return string 
+     */
     public function addFriendButton()
     { 
         $friendsArray = $this->friendsList->allModels;
@@ -97,40 +101,19 @@ class UserList extends Widget
                      return Html::a(
                         '<span class="glyphicon glyphicon-plus"></span>',
                     $url);
-            }
-            
-            /*
-                    if ( Yii::$app->user->id === $model->id ) {
-                        return '';
-                    }
-                    
-                    if ( array_key_exists( $model->id, $friendsArray ) ) {
-                        return '';
-                    }
-                    
-                    if ( array_key_exists( $model->id, $candidate ) ) {
-                        return '';
-                    }
-                    
-                    if ( $friends instanceof Friends ) {
-                        //echo ($friends->initiated === $model->id);
-                        return '';
-                    }
-                    
-                    return Html::a(
-                        '<span class="glyphicon glyphicon-plus"></span>',
-                    $url);*/
-                    
+            }                  
         };
     }
 
+    /**
+     * this method returning a template for 'delete-friend' button
+     * @return string 
+     */
     public function deleteFriendButton()
     {
         $friendsArray = $this->friendsList->allModels; 
         
-        return 
-        
-        function($url, $model) use ($friendsArray){
+        return  function($url, $model) use ($friendsArray){
             if (array_key_exists( $model->id, $friendsArray )){
                 return Html::a(
                     '<span class="glyphicon glyphicon-minus"></span>', 

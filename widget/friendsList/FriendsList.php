@@ -7,13 +7,7 @@ use app\modules\friends\provider\FriendsDataProvider;
 use app\modules\friends\provider\WidgetAssets as WidgetAssets;
 
 Class FriendsList extends Widget
-{
-    /**
-     *
-     * @var Integer 
-     */
-    public $userId;
-    
+{   
     /**
      *
      * @var UserC 
@@ -21,19 +15,19 @@ Class FriendsList extends Widget
     public $user;
     
     /**
-     *
-     * @var ArrayDataProvider 
+     *  friends array
+     * @var app\modules\friends\dataProvider\FriendsDataProvider  
      */
     public $friends;
     
     /**
-     *
+     * candidates to Friends array
      * @var app\modules\friends\dataProvider\CandidateDataProvider 
      */
     public $candidates;
     
     /**
-     *
+     * 
      * @var array 
      */
     private $_errors;
@@ -71,7 +65,7 @@ Class FriendsList extends Widget
     {
         return $this->render( 'index', [ 'widgetInstance' => $this ] );
     }
-    
+    /*
     public function addError($config)
     {
         if ( is_array($config) && count($config) === 1 ) {
@@ -79,6 +73,6 @@ Class FriendsList extends Widget
             return;
         }
         new \InvalidArgumentException();
-    }
+    }*/
 
 }

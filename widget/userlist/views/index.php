@@ -1,8 +1,11 @@
 <?php
 /**
  * This view of UserList. app\modules\friends\widget\userlist\view\index.php
- * @var $widgetInstance app\modules\friends\widget\userlist\UserList
 */
+
+/* @var $userProvider \yii\data\ActiveDataProvider */
+
+/* @var $widgetInstance app\modules\friends\widget\userlist\UserList */
 
 use yii\helpers\Html as Html;
 use yii\helpers\Url as Url;
