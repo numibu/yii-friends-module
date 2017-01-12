@@ -11,19 +11,21 @@
 use yii\helpers\Html;
 use app\modules\friends\widget\userlist\UserList;
 
+
+$cat = 'friends'; // category for translate template
 ?>
     
 <div>      
     <div class="tabs">
 
         <input id="tab1" type="radio" name="tabs" checked>
-        <label for="tab1" title="Your friends">Friends</label>
+        <label for="tab1" title="Your friends"><?= Yii::t($cat, 'friends')?></label>
 
         <input id="tab2" type="radio" name="tabs">
-        <label for="tab2" title="Friend Ph.D.">+Friends</label>
+        <label for="tab2" title="Friend Ph.D."><?= Yii::t($cat, 'candidateFriends')?></label>
         
         <input id="tab3" type="radio" name="tabs">
-        <label for="tab3" title="All active users">All active users</label>
+        <label for="tab3" title="All active users"><?= Yii::t($cat, 'AllUser')?></label>
 
 
         <section id="content1">
@@ -94,6 +96,6 @@ use app\modules\friends\widget\userlist\UserList;
 
 <style>
     div.tabs section{
-        display: none;  
+            display: none;
     }
 </style>

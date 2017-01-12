@@ -1,10 +1,10 @@
 <?php namespace app\modules\friends\widget\friendsList;
 
-use yii\base\Widget as Widget;
-use app\modules\friends\models\UserC as UserC;
+use yii\base\Widget;
+use app\modules\friends\models\UserC;
 use app\modules\friends\provider\CandidateDataProvider;
 use app\modules\friends\provider\FriendsDataProvider;
-use app\modules\friends\provider\WidgetAssets as WidgetAssets;
+use app\modules\friends\assets\WidgetAssets;
 
 Class FriendsList extends Widget
 {   
@@ -29,8 +29,8 @@ Class FriendsList extends Widget
     /**
      * 
      * @var array 
-     */
-    private $_errors;
+     *
+    private $_errors;*/
 
 
     public function init()

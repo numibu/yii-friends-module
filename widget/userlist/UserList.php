@@ -53,7 +53,7 @@ class UserList extends Widget
     }
     
     /**
-     * render user list
+     * Render user list
      */
     public function run() {
         $config = ['query' => UserC::find()];
@@ -65,7 +65,7 @@ class UserList extends Widget
     }
     
     /**
-     * this method returning a template for button actions
+     * This method returning a template for button actions
      * @return string 
      */
     public function getButtonTemplate()
@@ -78,7 +78,7 @@ class UserList extends Widget
     }
     
     /**
-     * this method returning a template for 'add-friend' button
+     * This method returning a template for 'add-friend' button
      * @return string 
      */
     public function addFriendButton()
@@ -86,7 +86,9 @@ class UserList extends Widget
         $friendsArray = $this->friendsList->allModels;
         $candidate = $this->candidate;
         
-        return function($url, $model ) use ( $friendsArray, $candidate ) {
+        return 
+        
+        function($url, $model ) use ( $friendsArray, $candidate ) {
             
             $friends = Friends::findOne( ['initiated_id' => $model->id, 'initiator_id' => Yii::$app->user->id] );
                     
@@ -106,7 +108,7 @@ class UserList extends Widget
     }
 
     /**
-     * this method returning a template for 'delete-friend' button
+     * This method returning a template for 'delete-friend' button
      * @return string 
      */
     public function deleteFriendButton()

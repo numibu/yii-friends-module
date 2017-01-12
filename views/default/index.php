@@ -1,16 +1,14 @@
 <?php
 /**
- * 
+ * A Default file of view for 'friends' module
+ * modules/friends/views/default/index.php
  */
 
-use app\modules\friends\widget\friendsList\FriendsList as FriendsList;
-/*
-$users = \app\modules\friends\models\UserC::find()->with('friendsx')->all();
-$asd = $users[2]->friendsx;
-$x=123;*/
+use app\modules\friends\widget\friendsList\FriendsList;
+var_dump(Yii::$app->i18n->translations);exit();
 ?>
-<div class="friends-default-index hidden">
-    <h1><?= $this->context->action->uniqueId ?></h1>
+<div class="friends-default-index">
+    <!-- <h1><? = $this->context->action->uniqueId ?></h1> -->
     <p>
         This is the view content for action "<?= $this->context->action->id ?>".
         The action belongs to the controller "<?= get_class($this->context) ?>"
