@@ -1,0 +1,27 @@
+{
+    "name": "numibu/yii-friends-module",
+    "description": "The users module for Yii framework.",
+    "keywords": ["yii2", "yii 2", "users", "user", "module", "modules", "friends", "friend"],
+    "license": "Apache License version 2.0",
+    "authors": [
+        {
+            "name": "alexandrr.naumenko",
+            "email": "alexandrr.naumenko@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/numibu/yii-friends-module/issues?state=open",
+        "source": "https://github.com/numibu/yii-friends-module"
+    },
+    "require": {
+				"yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "numibu\\friends\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "numibu\\friends\\Bootstrap"
+    }
+}
