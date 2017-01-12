@@ -1,4 +1,5 @@
 <?php
+//UK
 return [
     'ID' => 'Номер',
     'User ID' => 'Номер користувача',
@@ -10,4 +11,7 @@ return [
     'New Email' => 'Нова E-mail адреса',
     'Users' => 'Користувачі',
     'Cancel' => 'Скасувати',
+    'AllUser'=>'Усі користувачі',
+    'friends'=>'Друзі',
+    'candidateFriends'=>'Кандидати'
 ];
