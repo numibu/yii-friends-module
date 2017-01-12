@@ -16,17 +16,18 @@ class DefaultController extends Controller
      * @return string
      */
     public function actionIndex()
-    {
-        /*$config = ['query' => UserC::find()];
-        $userDataProvider = new \yii\data\ActiveDataProvider($config);
-        return $this->render('index', ['userProvider' => $userDataProvider]);*/
-        
+    {       
         if (  Yii::$app->user->isGuest ) { 
             return $this->goHome();
         }
         return $this->render('index');
     }
     
+    /**
+     * Action adding new friend or candidate.
+     * @param type $id - userID for new friend.
+     * @return String - rendered of view temlate. 
+     */
     public function actionAddFriend($id)
     {
         $friendsItem = new Friends();
@@ -37,8 +38,9 @@ class DefaultController extends Controller
     }
     
     /**
-     * 
-     * @param Integer $id
+     * Action deleting new friend or candidate.
+     * @param Integer $id  - userID for delete friend.
+     * @return String - rendered of view temlate. 
      */
     public function actionDeleteFriend($id)
     {
