@@ -25,6 +25,10 @@ class Friends extends \yii\db\ActiveRecord
         return 'friends';
     }
     
+    /**
+     * Returning fiel name for primaryKey
+     * @return array
+     */
     public static function primaryKey() {
         parent::primaryKey();
         return ['initiator_id'];
@@ -70,6 +74,10 @@ class Friends extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'initiator_id']);
     }
     
+    /**
+     * Action deleting new friend or candidate.
+     * @param type $friendId - userID for delete friend.
+     */
     public static function deleteFriend($friendId) 
     {
         $initiator = self::find()->where([
