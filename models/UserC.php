@@ -6,16 +6,11 @@ use app\modules\friends\models\Friends as Friends;
 
 
 class UserC extends User {
-    
-    public  function getFriendsx(){
-        
-        return $this->hasMany(Friends::className(), ['initiator_id'=>'id']); 
-    }
-
 
     /**
-     * This Method returns array of friends user
-     * @return array $result
+     * This Method returns The created DB command instance. 
+     * To selects a friends of user.
+     * @return yii\db\Command     
      */
     public function getFriends()
     {  
@@ -31,8 +26,9 @@ class UserC extends User {
     }
     
     /**
-     * This Method returns array of candidates
-     * @return Array $result
+     * This Method returns the created DB command instance. 
+     * To selects a candidates of user.
+     * @return yii\db\Command     
      */
     public function getCandidate()
     {
