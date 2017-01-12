@@ -8,7 +8,7 @@
 
 /* стили секций с содержанием */
 section {
-  display: none;
+ /*display: none;*/
   padding: 15px;
   background: #fff;
   border: 1px solid #ddd;
@@ -51,7 +51,8 @@ section {
 }
 /* активация секций с помощью переключателя :checked */
 #tab1:checked ~ #content1,
-#tab2:checked ~ #content2 {
+#tab2:checked ~ #content2, 
+#tab3:checked ~ #content3 {
   display: block;
 }
 /* медиа запросы для различных типов носителей */  
