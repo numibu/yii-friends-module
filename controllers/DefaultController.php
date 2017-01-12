@@ -24,6 +24,16 @@ class DefaultController extends Controller
     }
     
     /**
+     * View membership of user(id)
+     * @param integer $id
+     */
+    public function actionView($id)
+    {
+        // Your implementation of the functional
+        return $this->render('index');
+    }
+    
+    /**
      * Action adding new friend or candidate.
      * @param type $id - userID for new friend.
      * @return String - rendered of view temlate. 
