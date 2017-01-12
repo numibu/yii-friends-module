@@ -40,14 +40,25 @@ class Friends extends \yii\base\Module
         // custom initialization code goes here
         
         
-        // set up i8n
+         // Add module I18N category.
         if (empty(Yii::$app->i18n->translations['friends'])) {
             Yii::$app->i18n->translations['friends'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
-                'basePath' => __DIR__ . '/messages',
-                //'forceTranslation' => true,
+                'basePath' => '@friends/messages',//@friends = $this->setAliases
+                'forceTranslation' => true,
             ];
         }
+        // Add module URL rules.
+        Yii::$app->getUrlManager()->addRules(
+            [
+                [
+                    'pattern' => '<module>/<controller>/<action>/<id:\d+>',
+                    'route' => '<module>/<controller>/<action>',
+                    'suffix' => ''
+                ]
+            ],
+            false
+        );
         
         // set alias
         $this->setAliases([
