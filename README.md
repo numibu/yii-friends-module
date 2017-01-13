@@ -45,7 +45,7 @@ Go to your application in your browser:
 echo FriendsList::widget();
 ``` 
 <p>in your view file:</p>
-![Image of Module](https://cloud.githubusercontent.com/assets/13916692/21888744/42be8382-d8ce-11e6-92ab-b6b8fe0e2be0.png)
+![Image of Module](https://cloud.githubusercontent.com/assets/13916692/21925381/ebb9750c-d985-11e6-9b2b-4ca51826b585.png)
 
 
 **License**
