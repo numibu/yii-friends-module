@@ -7,6 +7,7 @@
   - <p>The preferred way to install this extension is through composer.</p>
   <p>Either run:</p>
   <code>php composer.phar require --prefer-dist numibu/yii2-friends-module "*"</code>
+  
   <p>or add</p>
   <code>"numibu/yii2-friends-module": "*"</code>
 	<p>to the require section of your composer.json file.</p>
@@ -16,6 +17,7 @@
 
 <h4>Configuration</h4>
 <p>Add yii2-users-module to module section of each application config:</p>
+
 ```php
 'modules' => [
 	'friends' => [
@@ -23,10 +25,13 @@
 		]
 	]
 ```
+
 <h4>Run migration file</h4>
+
 ```php 
 php yii migrate --migrationPath=@vendor/numibu/yii2-friends-module/migrations
 ```
+
 In the presentation file adding line:
 ```php 
 var_dump( \Yii::$app->getModule('friends') );
@@ -41,10 +46,13 @@ Go to your application in your browser:
 	
 **Usage:**
 <p>Set a line </p>
+
 ```php 
 echo FriendsList::widget();
 ``` 
+
 <p>in your view file:</p>
+
 ![Image of Module](https://cloud.githubusercontent.com/assets/13916692/21925381/ebb9750c-d985-11e6-9b2b-4ca51826b585.png)
 
 
