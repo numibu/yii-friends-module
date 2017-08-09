@@ -29,7 +29,7 @@ Class FriendsList extends Widget
     /**
      * 
      * @var array 
-     *
+     */
     private $_errors;
 
 
