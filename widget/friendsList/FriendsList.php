@@ -30,7 +30,7 @@ Class FriendsList extends Widget
      * 
      * @var array 
      *
-    private $_errors;*/
+    private $_errors;
 
 
     public function init()
